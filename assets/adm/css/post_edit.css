@@ -1,0 +1,11 @@
+[for="date"]{
+    display: block;
+}
+.date{
+    width: 120px;
+    display: inline;
+}
+.hour{
+    display: inline;
+    width: 100px;
+}

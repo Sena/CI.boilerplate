@@ -1,0 +1,101 @@
+/*Template*/
+.checkbox label:after,
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+/*-----*/
+
+.global-inf > div{
+    margin: 0;
+}
+
+.login{
+    border-bottom: 1px #f0f0f0 solid;
+}
+.login-wrap{
+    float: none;
+    margin: 0 auto;
+}
+.user-logout{
+    float: right;
+}
+.user-logout-container div{
+    float: right;
+    margin: 15px 0;
+}
+.user-logout-container a{
+    float: right;
+    margin: 7px 0 0 15px;
+}
+.header{
+    background: #e7e7e7;
+    padding: 20px 0 0;
+}
+.header-wrap{
+    float: none;
+    margin: 0 auto;
+}
+.dataTable .img-thumbnail{
+    max-width: 100px;
+}
+.dataTables_wrapper, .dataTables_info, .dataTables_paginate{
+    margin-top: 20px;
+}
+.dataTable .action{
+    width: 100px;
+    text-align: center;
+}
