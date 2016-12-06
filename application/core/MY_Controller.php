@@ -177,6 +177,7 @@ class  MY_Controller extends CI_Controller
             'name' => $this->router->class . '_' . $this->router->method,
             'path' => $this->uri->segment(1) == 'adm' ? 'assets/adm/css/' : null
         ));
+
         $this->loadJs(
             array(
                 array(
@@ -189,6 +190,7 @@ class  MY_Controller extends CI_Controller
                 )
             )
         );
+        
         $this->data['js'] = implode(null, $this->js);
         $this->data['css'] = implode(null, $this->css);
         $this->data['assets'] = implode(null, $this->assets);
