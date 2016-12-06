@@ -43,8 +43,9 @@ class  MY_Controller extends CI_Controller
     /**
      *
      */
-    public function debug() {
-        print_r($this);
+    public function debug($value = null) {
+        print_r($value);
+        exit();
     }
 
     public function __construct()
@@ -259,6 +260,51 @@ class  MY_Controller extends CI_Controller
         }
     }
 
+    protected function loadDataTables(){
+        $this->loadJs(array(
+            array(
+                'name' => 'jquery.dataTables.min',
+                'path' => 'assets/dataTables/media/js/'
+            ),
+            array(
+                'name' => 'dataTables.bootstrap.min',
+                'path' => 'assets/dataTables/media/js/'
+            ),
+            array(
+                'name' => 'dataTables.responsive.min',
+                'path' => 'assets/dataTables/media/js/'
+            ),
+            array(
+                'name' => 'responsive.bootstrap.min',
+                'path' => 'assets/dataTables/media/js/'
+            ),
+            array(
+                'name' => 'dataTables',
+                'path' => 'assets/dataTables/'
+            )
+        ));
+
+        $this->loadCss(array(
+            array(
+                'name' => 'responsive.bootstrap.min',
+                'path' => 'assets/dataTables/media/css/'
+            ),
+            array(
+                'name' => 'responsive.dataTables.min',
+                'path' => 'assets/dataTables/media/css/'
+            ),
+            array(
+                'name' => 'dataTables.bootstrap.min',
+                'path' => 'assets/dataTables/media/css/'
+            ),
+            array(
+                'name' => 'dataTables',
+                'path' => 'assets/dataTables/'
+            ),
+
+        ));
+    }
+    
     protected function loadCss(array $files, $priority = false)
     {
         $version = 0;
