@@ -55,32 +55,16 @@ class  MY_Controller extends CI_Controller
         $this->header = ($this->uri->segment(1) == 'adm' ? null : $this->template) . '/default/header';
         $this->footer = ($this->uri->segment(1) == 'adm' ? null : $this->template) . '/default/footer';
 
-        $this->loadCss(array(
-            array(
-                'name' => 'bootstrap',
-                'path' => 'assets/bootstrap/css/'
-            ),
-            array(
-                'name' => 'font-awesome',
-                'path' => 'assets/font_awesome/css/'
-            ),
-            array(
-                'name' => 'bootstrap-theme',
-                'path' => 'assets/bootstrap/css/'
-            )
-        ), true);
+        /*
+         * Put the default assets
+         */
+        $this->loadBootstrap();
+        $this->loadFontAwesome();
+        $this->loadAngular();
 
-        $this->loadJs(array(
-            array(
-                'name' => 'jquery',
-                'path' => 'assets/jquery/'
-            ),
-            array(
-                'name' => 'bootstrap',
-                'path' => 'assets/bootstrap/js/'
-            )
-        ), true);
-
+        /*
+         * Load data['me'] and data['adm]
+         */
         $this->data['me'] = $this->session->userdata('me')?$this->session->userdata('me'):null;
         $this->data['adm'] = $this->session->userdata('adm')?$this->session->userdata('adm'):null;
 
@@ -258,6 +242,55 @@ class  MY_Controller extends CI_Controller
         } else {
             return FALSE;
         }
+    }
+
+    protected function loadBootstrap($onlyCss = false){
+        $this->loadCss(array(
+            array(
+                'name' => 'bootstrap',
+                'path' => 'assets/bootstrap/css/'
+            ),
+            array(
+                'name' => 'bootstrap-theme',
+                'path' => 'assets/bootstrap/css/'
+            )
+        ),true);
+        if($onlyCss == false){
+            $this->loadJquery();
+            $this->loadJs(array(
+                array(
+                    'name' => 'bootstrap',
+                    'path' => 'assets/bootstrap/js/'
+                )
+            ), true);
+        }
+    }
+
+    protected function loadJquery(){
+        $this->loadJs(array(
+            array(
+                'name' => 'jquery',
+                'path' => 'assets/jquery/'
+            )
+        ), true);
+    }
+
+    protected function loadAngular(){
+        $this->loadJs(array(
+            array(
+                'name' => 'angular',
+                'path' => 'assets/angular/'
+            )
+        ), true);
+    }
+
+    protected function loadFontAwesome(){
+        $this->loadCss(array(
+            array(
+                'name' => 'font-awesome',
+                'path' => 'assets/font_awesome/css/'
+            )
+        ), true);
     }
 
     protected function loadDataTables(){
