@@ -41,9 +41,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,1,'Flávio sena','sena@iocode.com.br','202cb962ac59075b964b07152d234b70',2);
-INSERT INTO `admin` VALUES (2,1,'Gleydson Bordes','gleydson@iocode.com.br','202cb962ac59075b964b07152d234b70',2);
-INSERT INTO `admin` VALUES (3,1,'Janaina','janaina@3tom.com.br','202cb962ac59075b964b07152d234b70',2);
+INSERT INTO `admin` VALUES (1,1,'Leonardo Soares','leonardo@gorz.com.br','202cb962ac59075b964b07152d234b70',2);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
