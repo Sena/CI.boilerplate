@@ -2,12 +2,13 @@ RewriteEngine on
 RewriteCond $1 !^(index\.php|assets|robots\.txt)
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
-SetEnvIf Host hulk$ CI_SYS=../CI_3.0
-SetEnvIf Host hulk$ CI_ENV=development
+SetEnvIf Host 127.0.0.1$ CI_SYS=../CI_3.1
+SetEnvIf Host 127.0.0.1$ CI_ENV=development
+SetEnvIf Host 127.0.0.1$ CI_DB=development
 
-SetEnvIf Host localhost$ CI_SYS=../CI_3.0
+SetEnvIf Host localhost$ CI_SYS=../CI_3.1
 SetEnvIf Host localhost$ CI_ENV=development
-
+SetEnvIf Host localhost$ CI_DB=development
 
 <FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf)$">
 Header set Cache-Control "max-age=864000"
